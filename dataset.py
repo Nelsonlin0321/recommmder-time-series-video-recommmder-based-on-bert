@@ -18,11 +18,12 @@ numeric_features = list(numeric_scaler.feature_names_in_)
 
 class ViewDataSet(Dataset):
 
-    def __init__(self, df_agg_dataset):
-        self.df_agg_dataset = df_agg_dataset
-        self.len = len(df_agg_dataset)
+    def __init__(self, df):
+        self.df = df
+        self.len = len(df)
+        
         self.non_text_features_label = numeric_features + \
-            catergory_features + ['label']
+            catergory_features + ['labels']
 
     def __len__(self):
         return self.len
@@ -31,7 +32,7 @@ class ViewDataSet(Dataset):
 
         index = [index]
 
-        data_item = self.df_agg_dataset.iloc[index]
+        data_item = self.df.iloc[index]
 
         tokenized_inputs = tokenizer(
             text=data_item['next_sri_des'].tolist(),
@@ -45,7 +46,7 @@ class ViewDataSet(Dataset):
 
         features_dict = data_item[self.non_text_features_label].to_dict("list")
         features_dict.update(tokenized_inputs)
-        features_dict = {k: torch.squeeze(torch.tensor(v)) if k != 'label' else torch.squeeze(
-            torch.tensor(v, dtype=torch.float32)) for k, v in features_dict.items()}
+        features_dict = {k: torch.squeeze(torch.tensor(v)) for k, v in features_dict.items()}
+        
 
         return features_dict
