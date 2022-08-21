@@ -207,3 +207,6 @@ class VedioRecommender(AlbertPreTrainedModel):
             hidden_states=outputs.hidden_states,
             attentions=outputs.attentions,
         )
+        
+def VedioRecommenderModel():
+    return VedioRecommender.from_pretrained(pretrained_model_name)
