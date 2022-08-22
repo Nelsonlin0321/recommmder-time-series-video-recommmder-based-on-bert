@@ -1,5 +1,8 @@
 # Time Series Video Recommender with BERT
 
+### data:https://drive.google.com/file/d/1Bhwh6A6OBWBaPPNJfj6hNPLjbQ5vFAZq/view?usp=sharing
+
+
 ### Model
 <img src="./model-overview.png" alt="model-overview.png" style="width: 800px;"/>
 
