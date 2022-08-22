@@ -1,6 +1,6 @@
 # Time Series Video Recommender with BERT
 
-### data:https://drive.google.com/file/d/1Bhwh6A6OBWBaPPNJfj6hNPLjbQ5vFAZq/view?usp=sharing
+data:https://drive.google.com/file/d/1Bhwh6A6OBWBaPPNJfj6hNPLjbQ5vFAZq/view?usp=sharing
 
 
 ### Model
